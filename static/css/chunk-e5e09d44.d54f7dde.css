@@ -1,0 +1,46 @@
+.navbar[data-v-0421930a] {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100
+}
+
+.radio1[data-v-69238719] {
+    left: -15px
+}
+
+.radio1[data-v-69238719], .radio2[data-v-69238719] {
+    position: absolute;
+    top: 45px;
+    background-color: #2bb7b3;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%
+}
+
+.radio2[data-v-69238719] {
+    right: -15px
+}
+
+.green[data-v-69238719] {
+    color: #01bb2c;
+    font-weight: 600
+}
+
+.red[data-v-69238719] {
+    color: #f5382a;
+    font-weight: 600
+}
+
+.br[data-v-69238719] {
+    border-top: 1px dashed #999
+}
+
+.zw[data-v-69238719] {
+    position: absolute;
+    top: 45%;
+    left: 38%;
+    text-align: center;
+    color: #999
+}
