@@ -18,7 +18,7 @@
         return e
     }
 
-    var r = {}, a = { app: 0 }, o = { app: 0 }, c = [];
+    var r = {}, a = {app: 0}, o = {app: 0}, c = [];
 
     function u(e) {
         return i.p + "static/js/" + ({}[e] || e) + "." + {
@@ -35,7 +35,7 @@
 
     function i(t) {
         if (r[t]) return r[t].exports;
-        var n = r[t] = { i: t, l: !1, exports: {} };
+        var n = r[t] = {i: t, l: !1, exports: {}};
         return e[t].call(n.exports, n, n.exports, i), n.l = !0, n.exports
     }
 
@@ -101,15 +101,15 @@
                 }
             };
             var l = setTimeout((function () {
-                s({ type: "timeout", target: f })
+                s({type: "timeout", target: f})
             }), 12e4);
             f.onerror = f.onload = s, document.head.appendChild(f)
         }
         return Promise.all(t)
     }, i.m = e, i.c = r, i.d = function (e, t, n) {
-        i.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: n })
+        i.o(e, t) || Object.defineProperty(e, t, {enumerable: !0, get: n})
     }, i.r = function (e) {
-        "undefined" !== typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 })
+        "undefined" !== typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {value: "Module"}), Object.defineProperty(e, "__esModule", {value: !0})
     }, i.t = function (e, t) {
         if (1 & t && (e = i(e)), 8 & t) return e;
         if (4 & t && "object" === typeof e && e && e.__esModule) return e;
@@ -169,7 +169,7 @@
             return g
         }));
         var r = n("4ff3"), a = n.n(r), o = n("430a"), c = n("2f36"),
-            u = a.a.create({ timeout: 2e5, baseURL: "https://cxgl.sustech.edu.cn/api" });
+            u = a.a.create({timeout: 2e5, baseURL: "https://cxgl.sustech.edu.cn/api"});
         o["default"].prototype.$http = u, u.interceptors.request.use((function (e) {
             return e.headers["Authorization"] = sessionStorage.getItem("token"), e
         }), (function (e) {
@@ -219,27 +219,27 @@
         }));
         var i = {
             get: function (e, t) {
-                return u({ method: "get", url: "".concat(e), params: t })
+                return u({method: "get", url: "".concat(e), params: t})
             }, getTime: function (e, t) {
                 var n = "time=" + (new Date).getTime();
                 for (var r in t) n += "&" + r + "=" + t[r];
-                return u({ method: "get", url: "".concat(e, "?").concat(n) })
+                return u({method: "get", url: "".concat(e, "?").concat(n)})
             }, download: function (e) {
-                return u({ method: "get", url: "".concat(e), responseType: "blob" })
+                return u({method: "get", url: "".concat(e), responseType: "blob"})
             }, post: function (e, t) {
-                return u({ method: "post", url: "".concat(e), data: t, headers: { "Content-Type": "application/json" } })
+                return u({method: "post", url: "".concat(e), data: t, headers: {"Content-Type": "application/json"}})
             }, post2: function (e, t) {
                 return u({
                     method: "post", url: "".concat(e), data: t, transformRequest: [function (e) {
                         var t = "";
                         for (var n in e) t += encodeURIComponent(n) + "=" + encodeURIComponent(e[n]) + "&";
                         return t
-                    }], headers: { "Content-Type": "application/x-www-form-urlencoded" }
+                    }], headers: {"Content-Type": "application/x-www-form-urlencoded"}
                 })
             }, put: function (e, t) {
-                return u({ method: "put", url: "".concat(e), data: t, headers: { "Content-Type": "application/json" } })
+                return u({method: "put", url: "".concat(e), data: t, headers: {"Content-Type": "application/json"}})
             }, delete: function (e) {
-                return u({ method: "delete", url: "".concat(e) })
+                return u({method: "delete", url: "".concat(e)})
             }
         }, s = i;
 
@@ -287,9 +287,9 @@
         n.r(t);
         n("25ba"), n("5f1c"), n("6ba0"), n("b47f");
         var r = n("430a"), a = function () {
-            var e = this, t = e.$createElement, n = e._self._c || t;
-            return n("div", { attrs: { id: "app" } }, [n("router-view")], 1)
-        }, o = [], c = n("bde3"), u = n("365c"), i = (n("ac67"), n("1bc7"), n("32ea"), n("a450"), n("541d")),
+                var e = this, t = e.$createElement, n = e._self._c || t;
+                return n("div", {attrs: {id: "app"}}, [n("router-view")], 1)
+            }, o = [], c = n("bde3"), u = n("365c"), i = (n("ac67"), n("1bc7"), n("32ea"), n("a450"), n("541d")),
             s = (n("8dee"), n("7736"));
 
         function f(e, t) {
@@ -317,54 +317,54 @@
 
         r["default"].use(s["a"]);
         var l = new s["a"].Store({
-            state: { token: sessionStorage.getItem("token") },
-            mutations: {
-                SET_TOKEN: function (e, t) {
-                    e.token = t, sessionStorage.setItem("token", t), window.location.replace("/")
-                }
-            },
-            actions: {
-                casLogin: function (e, t) {
-                    var n = e.commit, r = d({}, t), a = r.ticket, o = r.url;
-                    return new Promise((function (e, t) {
-                        Object(u["c"])({ ticket: a, url: o }).then((function (r) {
-                            200 == r.code ? (e(r), n("SET_TOKEN", r.token), sessionStorage.setItem("userInfo", JSON.stringify({
-                                name: r.name,
-                                sid: r.sid
-                            }))) : (t(r), Object(c["g"])(), Object(c["b"])())
+                state: {token: sessionStorage.getItem("token")},
+                mutations: {
+                    SET_TOKEN: function (e, t) {
+                        e.token = t, sessionStorage.setItem("token", t), window.location.replace("/")
+                    }
+                },
+                actions: {
+                    casLogin: function (e, t) {
+                        var n = e.commit, r = d({}, t), a = r.ticket, o = r.url;
+                        return new Promise((function (e, t) {
+                            Object(u["c"])({ticket: a, url: o}).then((function (r) {
+                                200 == r.code ? (e(r), n("SET_TOKEN", r.token), sessionStorage.setItem("userInfo", JSON.stringify({
+                                    name: r.name,
+                                    sid: r.sid
+                                }))) : (t(r), Object(c["g"])(), Object(c["b"])())
+                            }))
                         }))
-                    }))
-                }
-            },
-            getters: {}
-        }), p = {
-            data: function () {
-                return { title: "首页" }
-            }, watch: {
-                $route: {
-                    handler: function () {
-                        this.title = this.$router.history.current.meta.title
+                    }
+                },
+                getters: {}
+            }), p = {
+                data: function () {
+                    return {title: "首页"}
+                }, watch: {
+                    $route: {
+                        handler: function () {
+                            this.title = this.$router.history.current.meta.title
+                        }
+                    }
+                }, created: function () {
+                    this.handleCasLogin()
+                }, methods: {
+                    handleCasLogin: function () {
+                        var e = Object(c["e"])("ticket"), t = sessionStorage.getItem("token");
+                        "string" !== typeof t && "string" !== typeof e && Object(c["a"])(), "string" !== typeof t && ("string" == typeof e ? this.handeTicketVerification(e, "https://cxsq.sustech.edu.cn/") : Object(c["a"])())
+                    }, handeTicketVerification: function (e, t) {
+                        var n = {ticket: e, url: t};
+                        this.$store.dispatch("casLogin", n).then((function () {
+                        }))
                     }
                 }
-            }, created: function () {
-                this.handleCasLogin()
-            }, methods: {
-                handleCasLogin: function () {
-                    var e = Object(c["e"])("ticket"), t = sessionStorage.getItem("token");
-                    "string" !== typeof t && "string" !== typeof e && Object(c["a"])(), "string" !== typeof t && ("string" == typeof e ? this.handeTicketVerification(e, "https://cxsq.sustech.edu.cn/") : Object(c["a"])())
-                }, handeTicketVerification: function (e, t) {
-                    var n = { ticket: e, url: t };
-                    this.$store.dispatch("casLogin", n).then((function () {
-                    }))
-                }
-            }
-        }, h = p, b = (n("7c55"), n("cba8")), m = Object(b["a"])(h, a, o, !1, null, null, null), g = m.exports,
+            }, h = p, b = (n("7c55"), n("cba8")), m = Object(b["a"])(h, a, o, !1, null, null, null), g = m.exports,
             v = n("ac56"), k = function () {
                 var e = this, t = e.$createElement, n = e._self._c || t;
-                return n("div", { attrs: { id: "view" } }, [n("router-view")], 1)
+                return n("div", {attrs: {id: "view"}}, [n("router-view")], 1)
             }, O = [], w = {
                 data: function () {
-                    return { lang: "zh" }
+                    return {lang: "zh"}
                 }, methods: {
                     langBtn: function () {
                         "zh" == this.lang ? (this.lang = "en", this.$i18n.locale = "en") : (this.lang = "zh", this.$i18n.locale = "zh")
@@ -376,33 +376,33 @@
             routes: [{
                 path: "/workOrder", name: "/WorkOrder", component: function () {
                     return n.e("chunk-6391baa2").then(n.bind(null, "7751"))
-                }, meta: { title: "发起工单" }
+                }, meta: {title: "发起工单"}
             }, {
                 path: "/workOrderDetails", name: "/WorkOrderDetails", component: function () {
                     return Promise.all([n.e("chunk-5ba270e4"), n.e("chunk-5530adbb"), n.e("chunk-9d355972")]).then(n.bind(null, "70bc"))
-                }, meta: { title: "工单详情" }
+                }, meta: {title: "工单详情"}
             }, {
                 path: "/workOrderEidt", name: "/WorkOrderEidt", component: function () {
                     return Promise.all([n.e("chunk-5ba270e4"), n.e("chunk-5530adbb"), n.e("chunk-8e42b204")]).then(n.bind(null, "c686"))
-                }, meta: { title: "工单编辑" }
+                }, meta: {title: "工单编辑"}
             }, {
                 path: "/lineCode", name: "/LineCode", component: function () {
                     return n.e("chunk-e5e09d44").then(n.bind(null, "c0af"))
-                }, meta: { title: "通行条码" }
+                }, meta: {title: "通行条码"}
             }, {
                 path: "/", name: "Index", component: D, children: [{
                     path: "/", name: "Home", component: function () {
                         return n.e("chunk-0b50dfd4").then(n.bind(null, "77b8"))
-                    }, meta: { title: "出校申请", icon: "el-icon-s-home", affix: !0 }
+                    }, meta: {title: "出校申请", icon: "el-icon-s-home", affix: !0}
                 }, {
                     path: "dashboard", name: "Dashboard", component: function () {
                         return Promise.all([n.e("chunk-5ba270e4"), n.e("chunk-5fad64be")]).then(n.bind(null, "17cf"))
-                    }, meta: { title: "工单", icon: "el-icon-s-home", affix: !0 }
+                    }, meta: {title: "工单", icon: "el-icon-s-home", affix: !0}
                 }]
             }]
         }), S = n("2233"), I = (n("0896"), n("c200")), T = n("799d"), E = n("e312");
         r["default"].use(I["a"]);
-        var x = { zh: T, en: E }, C = new I["a"]({ locale: "zh", messages: x }), _ = C, L = n("bd28"), N = n("e82f"),
+        var x = {zh: T, en: E}, C = new I["a"]({locale: "zh", messages: x}), _ = C, L = n("bd28"), N = n("e82f"),
             A = n("4429"), M = n("815d"), $ = n("5aea"), R = n("87fd"), z = n("6635"), q = n("9cbc"), B = n("515a"),
             H = n("d05f"), J = n("ef72"), U = n("c8d3"),
             F = L["a"]([$["a"], R["a"], z["a"], q["a"], B["a"], H["a"], J["a"], U["a"], N["a"], A["a"], M["a"]]),
@@ -415,9 +415,9 @@
         }));
         var W = P, V = n("cb8b"), Y = n("89e3"), G = {
             notify: function (e, t) {
-                return Object(V["a"])({ type: e || "success", message: t || "通知内容" })
+                return Object(V["a"])({type: e || "success", message: t || "通知内容"})
             }, loading: function (e, t, n) {
-                return Y["a"].loading({ message: e || "加载中...", forbidClick: t || !0, duration: n || 0 })
+                return Y["a"].loading({message: e || "加载中...", forbidClick: t || !0, duration: n || 0})
             }, clearLoading: function () {
                 return Y["a"].clear()
             }
